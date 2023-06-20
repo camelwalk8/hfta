@@ -1,0 +1,24 @@
+---
+configVer: 0.0.1
+appName: Hermes File Transfer Agent (hfta)
+appDesc: Transfer file from source to destination. Can match regular expression or any wild card format. 
+            Mandatory checksum(md5) is required. Looks for md5 once found, finds corresponding file of any extension.
+appPod: Community
+appType: Run As Service
+transferFor: emailJson
+spec:
+  batchSize: 2000
+  maxReprocessTime: 5
+  archive: false
+  logFileDir: /home/auser/go/src/hfta/hfta-email-json/logs
+  dlqDir: /home/auser/go/src/hfta/hfta-email-json/dlq_dir
+  archiveDir: /home/auser/go/src/hfta/hfta-email-json/arc_dir
+  fileTransferSpec:
+    fileFilterRegEx:
+      - ^[0-9a-f]{12}4[0-9a-f]{3}[89ab][0-9a-f]{15}.md5
+      - ^[0-9a-f]{12}4[0-9a-f]{3}[89ab][0-9a-f]{15}_gal_[a-z]{2,3}.md5
+    sourceDir: /home/auser/go/src/hfta/hfta-email-json/src_dir
+    destinationDir: /home/auser/go/src/hfta/hfta-email-json/dst_dir
+    newCheckSum:
+      checkSumType: 'SHA256'
+

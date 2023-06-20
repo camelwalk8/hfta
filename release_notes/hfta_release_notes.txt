@@ -1,0 +1,22 @@
+Application Name: 
+  HFTA
+Application Description:
+  Hermes File Transfer Agent, is a util that can be used to transfer files from source 
+  to destination. Source file should be accompanied with coresponding MD5 file. MD5 file
+  should have same name as source file with extension .md5(in all small case).
+HFTA Used For:
+  Transfering email files from local linux path to windows share
+
+---START---
+
+Release Version Id:
+0.0.1
+Release UUID:
+--uuid--
+Release Date:
+--daet--
+Release Notes:
+  1. Initial Release
+  
+---END---
+
